@@ -6,12 +6,9 @@ This is a sample merchant server implementation that serves as a bridge between 
 
 It's built with node and designed to be run on heroku.
 
-We have an instance running at
+We have an instance running at http://sample-checkout.herokuapp.com/ 
 
-http://sample-checkout.herokuapp.com/
-
-that provides the backend for our Sample Checkout iOS app (TODO: link).
-
+This instnace provides the backend for our Sample Checkout iOS App, which you can find [here as part of the braintree-ios Xcode project](https://github.com/braintree/braintree-ios/tree/master/braintree/SampleCheckout)
 
 # Dependencies
 
@@ -26,22 +23,15 @@ You *must* set a few environment variables with your Braintree merchant settings
     heroku config:set BT_PRIVATE_KEY=your_private_key
 
 
-If you are running locally or on a unix machine, add environment variables to your `.bash_profile`:
-
-    export BT_MERCHANT_ID=your_merchant_id 
-    export BT_PUBLIC_KEY=your_public_key
-    export BT_PRIVATE_KEY=your_private_key
-
-or when you run node:
-
-    env BT_MERCHANT_ID=your_merchant_id sample-checkout.js
-
 # Running
 
-I personally find it easiest to store the environment export statements in a `herokue-sample-checkout-settings.sh` file, and run this server locally by doing:
+To run this server locally, you can set environment variables from the command line:
 
     cd heroku-sample-checkout
-    source herokue-sample-checkout-settings.sh
-    env NODE_PATH=./ node sample-checkout.js
+    env NODE_PATH=./  \
+    BT_MERCHANT_ID=your_merchant_id \
+    BT_PUBLIC_KEY=your_public_key \
+    BT_PRIVATE_KEY=your_private_key \
+    node sample-checkout.js
 
 

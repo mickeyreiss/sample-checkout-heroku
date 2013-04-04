@@ -15,10 +15,15 @@ If you are using heroku, you can set environment variables by doing:
     heroku config:set BT_PUBLIC_KEY=your_public_key
     heroku config:set BT_PRIVATE_KEY=your_private_key
 
-    If you are running locally or on a unix machine, add environment variables to your .bash_profile,
-    export BT_MERCHANT_ID=your_merchant_id 
-    when you run node,
-    env BT_MERCHANT_ID=your_merchant_id sample-checkout.js
+If you are running locally or on a unix machine, specify environment
+variables from the command line:
+
+    env NODE_PATH=./  \
+    BT_MERCHANT_ID=your_merchant_id \
+    BT_PUBLIC_KEY=your_public_key \
+    BT_PRIVATE_KEY=your_private_key \
+    node sample-checkout.js
+
 */
 var braintree_settings = {
   environment: braintree.Environment.Sandbox,
