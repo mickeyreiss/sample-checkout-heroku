@@ -2,7 +2,7 @@
   "name": "sample-checkout",
   "version": "0.0.1",
   "dependencies": {
-    "express": "2.5.x",
+    "express": "4.17.x",
     "braintree": "1.6.x",
     "coffee-script": "1.1.x",
     "xml2js": "0.2.x",
